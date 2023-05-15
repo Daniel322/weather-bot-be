@@ -7,10 +7,16 @@ const env = registerAs('env', () => ({
 
 const weatherApi = registerAs('weatherApi', () => ({
   token: process.env.OPEN_WEATHER_API_TOKEN,
+  url: process.env.OPEN_WEATHER_URL,
 }));
 
 const telegramApi = registerAs('telegram', () => ({
   token: process.env.TELEGRAM_BOT_TOKEN,
+}));
+
+const throttle = registerAs('throttle', () => ({
+  ttl: process.env.THROTTLE_TTL,
+  limit: process.env.THROTTLE_LIMIT,
 }));
 
 export const EnvConfig = {
@@ -21,7 +27,10 @@ export const EnvConfig = {
       .required(),
     TELEGRAM_BOT_TOKEN: Joi.string().optional(),
     OPEN_WEATHER_API_TOKEN: Joi.string().required(),
+    OPEN_WEATHER_URL: Joi.string().required(),
+    THROTTLE_TTL: Joi.string().required(),
+    THROTTLE_LIMIT: Joi.string().required(),
   }),
-  load: [env, weatherApi, telegramApi],
+  load: [env, weatherApi, telegramApi, throttle],
   isGlobal: true,
 };

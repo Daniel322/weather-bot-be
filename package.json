@@ -22,10 +22,15 @@
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
+    "@nestjs/axios": "^2.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.4.0",
+    "@nestjs/throttler": "^4.0.0",
+    "axios": "^1.4.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "helmet": "^7.0.0",
@@ -71,6 +76,11 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@modules/(.*)$": "<rootDir>/../src/modules/$1",
+      "^@common/(.*)$": "<rootDir>/../src/common/$1",
+      "^@services/(.*)$": "<rootDir>/../src/services/$1"
+    }
   }
 }
