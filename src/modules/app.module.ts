@@ -7,6 +7,7 @@ import { EnvConfig } from '@common/configs';
 import { HttpExceptionFilter } from '@common/exceptions';
 
 import { WeatherModule } from './weather/weather.module';
+import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { WeatherModule } from './weather/weather.module';
         limit: config.get('throttle.limit'),
       }),
     }),
+    TelegramModule,
     WeatherModule,
   ],
   controllers: [],

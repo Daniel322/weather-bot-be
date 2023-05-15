@@ -1,11 +1,12 @@
+/* eslint-disable prettier/prettier */
 export const codeToSmile = {
-  Clear: `Ясно \U00002600`,
-  Clouds: `Облачно \U00002601`,
-  Rain: `Дождь \U00002614`,
-  Drizzle: `Дождь \U00002614`,
-  Thunderstorm: `Гроза \U000026A1`,
-  Snow: `Снег \U0001F328`,
-  Mist: `Туман \U0001F32B`,
+  Clear: `Ясно ${String.fromCodePoint(0x2600)}`,
+  Clouds: `Облачно ${String.fromCodePoint(0x2601)}`,
+  Rain: `Дождь ${String.fromCodePoint(0x2614)}`,
+  Drizzle: `Дождь ${String.fromCodePoint(0x2614)}`,
+  Thunderstorm: `Гроза ${String.fromCodePoint(0x26A1)}`,
+  Snow: `Снег ${String.fromCodePoint(0x1f328)}`,
+  Mist: `Туман ${String.fromCodePoint(0x1f32b)}`,
 };
 
 export interface WeaterApiResponse {
